@@ -1,19 +1,22 @@
 package com.example.GS1.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Calendar;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+
+@Entity
+@Table(name = "tb_user")
+@Getter
+@Setter
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
+    @SequenceGenerator(name = "user_seq", sequenceName = "SQ_USER_GS", allocationSize = 1)
+    private Long id;
 
     @Column(name = "nome_usuario", nullable = false, length = 80)
     private String nomeUser;
@@ -27,6 +30,16 @@ public abstract class User {
 
     @Embedded
     private Endereco endereco;
+
+    public User(String nomeUser, Calendar dataAniversario, String cpfUser, Endereco endereco) {
+        this.nomeUser = nomeUser;
+        this.dataAniversario = dataAniversario;
+        this.cpfUser = cpfUser;
+        this.endereco = endereco;
+    }
+
+    // Construtor padrão (sem argumentos) para JPA
+    public User() {}
 
 
 

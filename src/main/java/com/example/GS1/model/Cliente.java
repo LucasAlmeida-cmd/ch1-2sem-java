@@ -8,19 +8,13 @@ import lombok.ToString;
 
 import java.util.Calendar;
 
-@Entity
-@Table(name = "tb_user_cliente")
-@SequenceGenerator(name = "cliente", sequenceName = "SQ_USER_CLIENTE_GS", allocationSize = 1)
+@Data
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@NoArgsConstructor
-@Data
-public class Cliente extends User{
-
-    @Id
-    @Column(name = "idCliente")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente")
-    private Long id;
+@Entity
+@Table(name = "tb_user_cliente")
+public class Cliente extends User {
 
     public Cliente(String nomeUser, Calendar dataAniversario, String cpfUser, Endereco endereco) {
         super(nomeUser, dataAniversario, cpfUser, endereco);

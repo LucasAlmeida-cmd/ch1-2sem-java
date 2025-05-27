@@ -2,7 +2,6 @@ package com.example.GS1.service;
 
 
 import com.example.GS1.DTO.TempoDTO;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.client.RestTemplate;
 
