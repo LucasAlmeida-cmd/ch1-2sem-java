@@ -1,7 +1,7 @@
 package com.example.GS1.service;
 
 
-import com.example.GS1.DTO.EnderecoRecords;
+import com.example.GS1.DTO.EnderecoDTO;
 import com.example.GS1.model.Endereco;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class ViaCepService {
    public Endereco buscarEnderecoPorCEP(String cep){
        String urlVia = "https://viacep.com.br/ws/"+ cep +"/json/";
 
-       EnderecoRecords response = restTemplate.getForObject(urlVia, EnderecoRecords.class);
+       EnderecoDTO response = restTemplate.getForObject(urlVia, EnderecoDTO.class);
 
        if (response == null) {
            throw new RuntimeException("CEP não encontrado");

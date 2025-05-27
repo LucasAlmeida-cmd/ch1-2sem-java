@@ -6,9 +6,8 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-
 @Data
-public class EnderecoRecords {
+public class EnderecoDTO {
     private String cep;
     private String logradouro;
     private String bairro;
