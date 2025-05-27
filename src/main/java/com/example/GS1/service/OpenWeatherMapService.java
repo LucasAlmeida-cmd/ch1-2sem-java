@@ -3,8 +3,10 @@ package com.example.GS1.service;
 
 import com.example.GS1.DTO.TempoDTO;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+@Service
 public class OpenWeatherMapService {
     private final RestTemplate restTemplate;
     private static final String API_KEY = "887e908f891ca36111b3429196529312";

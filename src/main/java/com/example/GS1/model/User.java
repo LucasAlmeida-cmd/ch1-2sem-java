@@ -7,15 +7,14 @@ import java.util.Calendar;
 
 
 @Entity
-@Table(name = "tb_user")
-@Getter
-@Setter
+@Table(name = "tb_user_gs")
+@Data
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
-    @SequenceGenerator(name = "user_seq", sequenceName = "SQ_USER_GS", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq_gs")
+    @SequenceGenerator(name = "user_seq_gs", sequenceName = "SQ_USER_GS", allocationSize = 1)
     private Long id;
 
     @Column(name = "nome_usuario", nullable = false, length = 80)
@@ -38,9 +37,5 @@ public abstract class User {
         this.endereco = endereco;
     }
 
-    // Construtor padrão (sem argumentos) para JPA
     public User() {}
-
-
-
 }

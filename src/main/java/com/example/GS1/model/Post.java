@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "tb_post")
+@Table(name = "tb_post_gs")
 public class Post {
 
     @Id
