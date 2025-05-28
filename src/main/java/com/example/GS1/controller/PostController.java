@@ -2,6 +2,7 @@ package com.example.GS1.controller;
 
 import com.example.GS1.model.Post;
 import com.example.GS1.service.PostService;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ public class PostController {
 
     @PostMapping
     public ResponseEntity<Post> criarPost(
+            @NotBlank(message = "O nome é obrigatório")
             @RequestParam("titulo") String titulo,
             @RequestParam("usuarioId") Long usuarioId,
             @RequestParam("imagemBytes") MultipartFile imagemBytes
