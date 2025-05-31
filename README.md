@@ -412,4 +412,4 @@ Retorno:
 
 - Link dos deploys: https://ch1-2sem-java.onrender.com
 - Vídeo demonstração da solução completa: https://youtu.be/fQEmXm-ahto
-- Vídeo pitch:  
+- Vídeo pitch: https://youtu.be/Vy-Bq_2zqZw 
